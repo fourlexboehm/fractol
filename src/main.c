@@ -34,9 +34,10 @@ int		main(int argc, char **argv)
 	if (argc < 2)
 		return (die("error: not enough arguments"));
 	f = fractal_match(argv[1]);
-	if (f->name == NULL)
+	if (!f->name)
 		return (die("error: invalid fractal name"));
-	if ((mlx = init(f)) == NULL)
+	mlx = init(f);
+	if (!mlx)
 		return (die("error: mlx couldn't initialize properly"));
 	reset_viewport(mlx);
 	render(mlx);
