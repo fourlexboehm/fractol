@@ -6,7 +6,7 @@
 /*   By: aboehm <aboehm@42adel.org.au>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:40:55 by aboehm            #+#    #+#             */
-/*   Updated: 2022/02/23 14:40:56 by aboehm           ###   ########.fr       */
+/*   Updated: 2022/03/02 13:42:36 by aboehm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define ZOOM 1.1f
 # define THREADS 8
 
-typedef struct		s_rgba
+typedef struct s_rgba
 {
 	uint8_t		b;
 	uint8_t		g;
@@ -29,13 +29,13 @@ typedef struct		s_rgba
 	uint8_t		a;
 }					t_rgba;
 
-typedef union		u_color
+typedef union u_color
 {
 	int			value;
 	t_rgba		rgba;
 }					t_color;
 
-typedef struct		s_mouse
+typedef struct s_mouse
 {
 	char		isdown;
 	int			x;
@@ -44,7 +44,7 @@ typedef struct		s_mouse
 	int			lasty;
 }					t_mouse;
 
-typedef struct		s_image
+typedef struct s_image
 {
 	void		*image;
 	char		*ptr;
@@ -53,13 +53,13 @@ typedef struct		s_image
 	int			endian;
 }					t_image;
 
-typedef struct		s_complex
+typedef struct s_complex
 {
 	double		r;
 	double		i;
 }					t_complex;
 
-typedef struct		s_viewport
+typedef struct s_viewport
 {
 	double		xmin;
 	double		xmax;
@@ -72,23 +72,22 @@ typedef struct		s_viewport
 	t_complex	mouse;
 }					t_viewport;
 
-typedef struct		s_pixel
+typedef struct s_pixel
 {
 	t_complex	c;
 	long		i;
 }					t_pixel;
 
-typedef struct		s_palette
+typedef struct s_palette
 {
 	uint8_t		count;
 	int			cycle;
 	int			colors[16];
 }					t_palette;
 typedef struct s_mlx	t_mlx;
-
-typedef void		(*t_f_fn_v)(t_viewport *v);
-typedef t_pixel		(*t_f_fn_p)(int x, int y, t_viewport *v, t_mlx *mlx);
-typedef struct		s_fractal
+typedef void			(*t_f_fn_v)(t_viewport *v);
+typedef t_pixel			(*t_f_fn_p)(int x, int y, t_viewport *v, t_mlx *mlx);
+typedef struct s_fractal
 {
 	char		*name;
 	t_f_fn_v	viewport;
@@ -96,7 +95,7 @@ typedef struct		s_fractal
 	int			mouse;
 }					t_fractal;
 
-typedef struct		s_render
+typedef struct s_render
 {
 	t_mlx		*mlx;
 }					t_render;
@@ -131,7 +130,7 @@ void				clear_image(t_image *img);
 void				image_set_pixel(t_image *image, int x, int y, int color);
 t_fractal			*fractal_match(char *str);
 int					get_color(t_pixel p, t_mlx *mlx);
-t_palette			*get_palettes();
+t_palette			*get_palettes(void);
 void				zoom(int x, int y, t_viewport *v, double z);
 void				viewport_fit(t_viewport *v);
 void				reset_viewport(t_mlx *mlx);
