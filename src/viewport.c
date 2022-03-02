@@ -6,16 +6,16 @@
 /*   By: aboehm <aboehm@42adel.org.au>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:58:19 by aboehm            #+#    #+#             */
-/*   Updated: 2022/02/23 13:58:19 by aboehm           ###   ########.fr       */
+/*   Updated: 2022/02/28 13:05:54 by aboehm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void		viewport_fit(t_viewport *v)
+void	viewport_fit(t_viewport *v)
 {
-	double w;
-	double h;
+	double	w;
+	double	h;
 
 	w = v->xmax - v->xmin;
 	h = v->ymax - v->ymin;
@@ -31,7 +31,7 @@ void		viewport_fit(t_viewport *v)
 	}
 }
 
-void		reset_viewport(t_mlx *mlx)
+void	reset_viewport(t_mlx *mlx)
 {
 	mlx->viewport.offx = 0;
 	mlx->viewport.offy = 0;

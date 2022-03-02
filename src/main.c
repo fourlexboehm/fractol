@@ -6,7 +6,7 @@
 /*   By: aboehm <aboehm@42adel.org.au>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:57:56 by aboehm            #+#    #+#             */
-/*   Updated: 2022/02/23 13:57:57 by aboehm           ###   ########.fr       */
+/*   Updated: 2022/02/28 13:06:18 by aboehm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include "fractol.h"
 #include "mlx.h"
 
-int		hook_expose(t_mlx *mlx)
+int	hook_expose(t_mlx *mlx)
 {
 	render(mlx);
 	return (0);
 }
 
-int		die(char *reason)
+int	die(char *reason)
 {
 	ft_putendl_fd(reason, 1);
 	return (1);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_mlx		*mlx;
 	t_fractal	*f;

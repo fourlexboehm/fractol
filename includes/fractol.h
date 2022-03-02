@@ -96,16 +96,9 @@ typedef struct		s_fractal
 	int			mouse;
 }					t_fractal;
 
-typedef struct		s_thread
-{
-	int				id;
-	t_mlx			*mlx;
-}					t_thread;
-
 typedef struct		s_render
 {
-	pthread_t		threads[THREADS];
-	t_thread		args[THREADS];
+	t_mlx		*mlx;
 }					t_render;
 
 struct				s_mlx

@@ -8,17 +8,16 @@ OBJDIR	= ./obj
 
 # src / obj files
 SRC		= main.c \
-		  window.c \
 		  image.c \
 		  mouse.c \
 		  keyboard.c \
-		  zoom.c \
 		  fractal.c \
 		  palette.c \
 		  draw.c \
 		  color.c \
 		  viewport.c \
-		  $(addprefix fractals/,$(shell ls $(SRCDIR)/fractals | grep -E ".+\.c"))
+		  fractals/julia.c \
+		  fractals/mandelbrot.c
 
 OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 

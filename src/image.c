@@ -6,7 +6,7 @@
 /*   By: aboehm <aboehm@42adel.org.au>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:57:42 by aboehm            #+#    #+#             */
-/*   Updated: 2022/02/23 13:57:43 by aboehm           ###   ########.fr       */
+/*   Updated: 2022/02/28 13:14:59 by aboehm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ t_image	*new_image(t_mlx *mlx)
 {
 	t_image		*img;
 
-	if ((img = ft_calloc(sizeof(t_image), 1)) == NULL)
+	img = ft_calloc(sizeof(t_image), 1);
+	if (!img)
 		return (NULL);
-	if ((img->image = mlx_new_image(mlx->mlx, WIN_WIDTH, WIN_HEIGHT)) == NULL)
+	img->image = mlx_new_image(mlx->mlx, WIN_WIDTH, WIN_HEIGHT);
+	if (!img->image)
 		return (del_image(mlx, img));
 	img->ptr = mlx_get_data_addr(img->image, &img->bpp, &img->stride,
 			&img->endian);

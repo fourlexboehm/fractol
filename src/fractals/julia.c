@@ -6,7 +6,7 @@
 /*   By: aboehm <aboehm@42adel.org.au>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:42:06 by aboehm            #+#    #+#             */
-/*   Updated: 2022/02/23 14:42:07 by aboehm           ###   ########.fr       */
+/*   Updated: 2022/02/28 12:30:22 by aboehm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <math.h>
 
-t_pixel		julia_pixel(int x, int y, t_viewport *v, t_mlx *mlx)
+t_pixel	julia_pixel(int x, int y, t_viewport *v, t_mlx *mlx)
 {
 	t_complex	z;
 	t_complex	c;
@@ -41,7 +41,7 @@ t_pixel		julia_pixel(int x, int y, t_viewport *v, t_mlx *mlx)
 	return ((t_pixel){.c = z, .i = i});
 }
 
-void		julia_viewport(t_viewport *v)
+void	julia_viewport(t_viewport *v)
 {
 	v->xmin = -2.0f;
 	v->xmax = 2.0f;
