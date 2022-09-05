@@ -60,7 +60,7 @@ t_mlx	*mlxdel(t_mlx *mlx)
 		mlx_destroy_window(mlx->mlx, mlx->window);
 	if (mlx->image != NULL)
 		del_image(mlx, mlx->image);
-	free((void **)&mlx);
+	free((void **)mlx);
 	return (NULL);
 }
 

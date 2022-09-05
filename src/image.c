@@ -32,7 +32,7 @@ t_image	*del_image(t_mlx *mlx, t_image *img)
 	{
 		if (img->image != NULL)
 			mlx_destroy_image(mlx->mlx, img->image);
-		free((void **)&img);
+		free(img);
 	}
 	return (NULL);
 }
